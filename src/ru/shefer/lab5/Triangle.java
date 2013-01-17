@@ -4,11 +4,11 @@ import ru.shefer.lab5.interfaces.*;
 
 public class Triangle extends Polygon {
 
-    public Triangle(Point p1, Point p2, Point p3) {
+    public Triangle(Point p1, Point p2, Point p3, String date) {
         this.p1 = p1;
         this.p2 = p2;
         this.p3 = p3;
-
+        customerDate = date;
         this.setName("Треугольник");
     }
 
@@ -23,7 +23,7 @@ public class Triangle extends Polygon {
 
     @Override
     public String toString() {
-        return "id=" + this.getId() + getName() + " Точки многоугольника: " + p1 + " " + p2 + " " + p3;
+        return "id=" + this.getId() + getName() + " Точки многоугольника: " + p1 + " " + p2 + " " + p3 + " " + customerDate;
     }
 
     @Override

@@ -16,15 +16,15 @@ public class Lab5 {
         Date date = new Date(System.currentTimeMillis());
         String customerDate = (1900 + date.getYear()) + "-" + (1 + date.getMonth()) + "-" + date.getDate() + " " + date.getHours() + ":" +date.getMinutes() + ":" + date.getSeconds();
         list.add(new Triangle(new Point(1, 1), new Point(2, 1), new Point(2, 2), customerDate));
-        list.add(new Quadrangle(new Point(1, 1), new Point(2, 1), new Point(2, 2), new Point(1, 2), customerDate));
-        list.add(new Pentagon(new Point(3, 3), new Point(6, 2), new Point(9, 4), new Point(6, 6), new Point(3, 5), customerDate));
-        list.add(new Hexagon(new Point(2, 3), new Point(5, 1), new Point(8, 3), new Point(8, 6), new Point(5, 8), new Point(2, 6), customerDate));
+        list.add(new Quadrangle(new Point(1, 1), new Point(2, 1), new Point(2, 2), new Point(1, 2)));
+        list.add(new Pentagon(new Point(3, 3), new Point(6, 2), new Point(9, 4), new Point(6, 6), new Point(3, 5)));
+        list.add(new Hexagon(new Point(2, 3), new Point(5, 1), new Point(8, 3), new Point(8, 6), new Point(5, 8), new Point(2, 6)));
         list.add(new Triangle(new Point(2, 3), new Point(8, 2), new Point(5, 6), customerDate));
-        list.add(new Quadrangle(new Point(2, 3), new Point(8, 2), new Point(8, 6), new Point(2, 6), customerDate));
-        list.add(new Pentagon(new Point(2, 3), new Point(5, 1), new Point(8, 2), new Point(8, 6), new Point(2, 6), customerDate));
-        list.add(new Hexagon(new Point(3, 3), new Point(6, 3), new Point(8, 5), new Point(8, 8), new Point(5, 8), new Point(3, 6), customerDate));
-        list.add(new Pentagon(new Point(3, 3), new Point(6, 3), new Point(8, 5), new Point(5, 8), new Point(3, 6), customerDate));
-        list.add(new Hexagon(new Point(1, 5), new Point(1, 9), new Point(9, 9), new Point(6, 9), new Point(5, 6), new Point(1, 4), customerDate));
+        list.add(new Quadrangle(new Point(2, 3), new Point(8, 2), new Point(8, 6), new Point(2, 6)));
+        list.add(new Pentagon(new Point(2, 3), new Point(5, 1), new Point(8, 2), new Point(8, 6), new Point(2, 6)));
+        list.add(new Hexagon(new Point(3, 3), new Point(6, 3), new Point(8, 5), new Point(8, 8), new Point(5, 8), new Point(3, 6)));
+        list.add(new Pentagon(new Point(3, 3), new Point(6, 3), new Point(8, 5), new Point(5, 8), new Point(3, 6)));
+        list.add(new Hexagon(new Point(1, 5), new Point(1, 9), new Point(9, 9), new Point(6, 9), new Point(5, 6), new Point(1, 4)));
 
     }
 

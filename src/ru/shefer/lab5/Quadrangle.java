@@ -6,11 +6,12 @@ public class Quadrangle extends Polygon {
 
     Point p4;
 
-    public Quadrangle(Point p1, Point p2, Point p3, Point p4) {
+    public Quadrangle(Point p1, Point p2, Point p3, Point p4, String date) {
         this.p1 = p1;
         this.p2 = p2;
         this.p3 = p3;
         this.p4 = p4;
+        customerDate = date;
         this.setName("Четыреугольник");
     }
 
@@ -26,7 +27,7 @@ public class Quadrangle extends Polygon {
 
     @Override
     public String toString() {
-        return "id=" + getId() + "\n" + getName() + " Точки многоугольника: " + p1 + " " + p2 + " " + p3 + " " + p4;
+        return "id=" + getId() + "\n" + getName() + " Точки многоугольника: " + p1 + " " + p2 + " " + p3 + " " + p4 + " " + customerDate;
     }
 
     @Override

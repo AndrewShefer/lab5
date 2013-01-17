@@ -5,12 +5,12 @@ import ru.shefer.lab5.*;
 import ru.shefer.lab5.main.*;
 import static org.junit.Assert.*;
 
-public class HexagonTest {
+public class PentagonTest {
 
     @Test
     public void testPerimeter() {
         System.out.println("Проверка метода perimeter()");
-        Hexagon p = new Hexagon(new Point(1, 1), new Point(2, 1), new Point(3, 3), new Point(3, 4), new Point(2, 4), new Point(1, 2), "as");
-        assertEquals(8.47, p.perimeter(), 0.01);
+        Pentagon p = new Pentagon(new Point(1, 1), new Point(2, 1), new Point(3, 3), new Point(2, 3), new Point(1, 2), as);
+        assertEquals(6.65, p.perimeter(), 0.001);
     }
 }

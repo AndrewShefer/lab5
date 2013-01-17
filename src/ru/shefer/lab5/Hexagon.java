@@ -8,13 +8,14 @@ public class Hexagon extends Polygon {
     Point p5;
     Point p6;
     
-    public Hexagon(Point p1, Point p2, Point p3, Point p4, Point p5, Point p6) {
+    public Hexagon(Point p1, Point p2, Point p3, Point p4, Point p5, Point p6, String date) {
         this.p1 = p1;
         this.p2 = p2;
         this.p3 = p3;
         this.p4 = p4;
         this.p5 = p5;
         this.p6 = p6;
+        customerDate = date;
         this.setName("Шестиугольник");
         
     }
@@ -33,7 +34,7 @@ public class Hexagon extends Polygon {
     
     @Override
     public String toString() {
-        return "id=" + getId() + "\n" + getName() + " Точки многоугольника: " + p1 + " " + p2 + " " + p3 + " " + p4 + " " + p5 + " " + p6;
+        return "id=" + getId() + "\n" + getName() + " Точки многоугольника: " + p1 + " " + p2 + " " + p3 + " " + p4 + " " + p5 + " " + p6 + " " + customerDate;
     }
     
     @Override

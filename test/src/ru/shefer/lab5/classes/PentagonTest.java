@@ -2,6 +2,7 @@ package ru.shefer.lab5.classes;
 
 import org.junit.Test;
 import ru.shefer.lab5.*;
+import ru.shefer.lab5.main.*;
 import static org.junit.Assert.*;
 
 public class PentagonTest {
@@ -9,7 +10,7 @@ public class PentagonTest {
     @Test
     public void testPerimeter() {
         System.out.println("Проверка метода perimeter()");
-        Pentagon p = new Pentagon(new Point(1, 1), new Point(2, 1), new Point(3, 3), new Point(2, 3), new Point(1, 2));
+        Pentagon p = new Pentagon(new Point(1, 1), new Point(2, 1), new Point(3, 3), new Point(2, 3), new Point(1, 2), "as");
         assertEquals(6.65, p.perimeter(), 0.001);
     }
 }

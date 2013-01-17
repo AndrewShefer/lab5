@@ -10,6 +10,7 @@ public abstract class Polygon {
     private int id;
     private static int nextId = 1;
     private String name;
+    public String customerDate;
 
     {
         id = nextId++;

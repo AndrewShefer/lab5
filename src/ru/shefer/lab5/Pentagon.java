@@ -7,12 +7,13 @@ public class Pentagon extends Polygon {
     Point p4;
     Point p5;
 
-    public Pentagon(Point p1, Point p2, Point p3, Point p4, Point p5) {
+    public Pentagon(Point p1, Point p2, Point p3, Point p4, Point p5, String date) {
         this.p1 = p1;
         this.p2 = p2;
         this.p3 = p3;
         this.p4 = p4;
         this.p5 = p5;
+        customerDate = date;
         this.setName("Пятиугольник");
     }
 
@@ -29,7 +30,7 @@ public class Pentagon extends Polygon {
 
     @Override
     public String toString() {
-        return "id=" + getId() + "\n" + getName() + " Точки многоугольника: " + p1 + " " + p2 + " " + p3 + " " + p4 + " " + p5;
+        return "id=" + getId() + "\n" + getName() + " Точки многоугольника: " + p1 + " " + p2 + " " + p3 + " " + p4 + " " + p5 + " " + customerDate;
     }
 
     @Override
