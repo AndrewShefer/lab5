@@ -1,0 +1,112 @@
+/* Программа для работы с классами: треугольник, четырехугольник, пятиугольник, шестиугольник.
+ Выполнил студент: ИВТ-01 Шефер А.В. */
+package ru.shefer.lab5.main;
+
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import ru.shefer.lab5.*;
+import ru.shefer.lab5.interfaces.*;
+public class Lab5 {
+
+    private static List<Polygon> list;
+
+    private static void init() { // создание и заполнение списка
+        list = new ArrayList<>();
+        list.add(new Triangle(new Point(1, 1), new Point(2, 1), new Point(2, 2)));
+        list.add(new Quadrangle(new Point(1, 1), new Point(2, 1), new Point(2, 2), new Point(1, 2)));
+        list.add(new Pentagon(new Point(3, 3), new Point(6, 2), new Point(9, 4), new Point(6, 6), new Point(3, 5)));
+        list.add(new Hexagon(new Point(2, 3), new Point(5, 1), new Point(8, 3), new Point(8, 6), new Point(5, 8), new Point(2, 6)));
+        list.add(new Triangle(new Point(2, 3), new Point(8, 2), new Point(5, 6)));
+        list.add(new Quadrangle(new Point(2, 3), new Point(8, 2), new Point(8, 6), new Point(2, 6)));
+        list.add(new Pentagon(new Point(2, 3), new Point(5, 1), new Point(8, 2), new Point(8, 6), new Point(2, 6)));
+        list.add(new Hexagon(new Point(3, 3), new Point(6, 3), new Point(8, 5), new Point(8, 8), new Point(5, 8), new Point(3, 6)));
+        list.add(new Pentagon(new Point(3, 3), new Point(6, 3), new Point(8, 5), new Point(5, 8), new Point(3, 6)));
+        list.add(new Hexagon(new Point(1, 5), new Point(1, 9), new Point(9, 9), new Point(6, 9), new Point(5, 6), new Point(1, 4)));
+
+    }
+
+    public static void main(String[] args) throws IOException {
+        init();
+
+// подготовка к вводу
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+        for (;;) { // начинаем бесконечный цикл
+            System.out.println();
+            System.out.println("Выберите тип сортировки (выйти - пустая строка):");
+            System.out.println("--------------------------------------------------");
+            System.out.println("1 - по возраcтанию id");
+            System.out.println("2 - по убыванию id");
+            System.out.println("3 - по возраcтанию имени");
+            System.out.println("4 - по убыванию имени");
+            System.out.println("5 - по возрастанию периметра");
+            System.out.println("6 - по убыванию периметра");
+            System.out.println("7 - отразить симметрично");
+            System.out.println("8 - переместить на вектор");
+            System.out.println("--------------------------------------------------");
+            String mode = br.readLine(); // читаем строку из буфера ввода
+            if (mode.isEmpty()) {
+                break; // прерываем цикл, если строка пустая
+            }
+            int sortMode = 0;
+            boolean sortUp = false;
+            switch (mode) {
+                case "1": {
+                    sortMode = 0;
+                    sortUp = false;
+                    break;
+                }
+                case "2": {
+                    sortMode = 0;
+                    sortUp = true;
+                    break;
+                }
+                case "3": {
+                    sortMode = 1;
+                    sortUp = false;
+                    break;
+                }
+                case "4": {
+                    sortMode = 1;
+                    sortUp = true;
+                    break;
+                }
+                case "5": {
+                    sortMode = 2;
+                    sortUp = false;
+                    break;
+                }
+                case "6": {
+                    sortMode = 2;
+                    sortUp = true;
+                    break;
+                }
+                case "7": {
+                    System.out.println("Введите id объекта");
+                    Scanner sc = new Scanner(System.in);
+                    int x = sc.nextInt();
+                    list.get(x - 1).doSummetry();
+                    break;
+                }
+                case "8": {
+                    System.out.println("Введите id объекта");
+                    Scanner sc = new Scanner(System.in);
+                    int x = sc.nextInt();
+                    System.out.println("Введите dx вектора");
+                    double dx = sc.nextDouble();
+                    System.out.println("Введите dy вектора");
+                    double dy = sc.nextDouble();
+                    VectorMy v = new VectorMy(dx, dy);
+                    list.get(x - 1).doMove(v);
+                    System.out.println("");
+                    break;
+                }
+            }
+            Collections.sort(list, new SortMode(sortUp, sortMode));
+            for (Polygon p : list) {
+                System.out.println(p);
+            }
+        }
+    }
+}
